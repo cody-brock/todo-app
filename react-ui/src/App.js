@@ -38,7 +38,7 @@ function App() {
               This is a production build from create-react-app.
             </p>
           : <p>
-              Edit <code>src/App.js</code> and save to reload.
+              blah blah blah
             </p>
         }
         <p>{'« '}<strong>
