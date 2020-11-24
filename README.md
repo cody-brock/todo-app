@@ -1,3 +1,18 @@
+# Todo:
+- ✓ Create Log In page
+- ✓ Create Sign Up page
+- Set up API calls to log in user and sign up user
+- Set up db to hold users
+- Set up context to hold user authorization state
+- Begin working on todo components
+
+
+
+
+
+
+
+
 # create-react-app with a Node server on Heroku
 
 A minimal example of using a Node backend (server for API, proxy, & routing) with a [React frontend](https://github.com/facebookincubator/create-react-app).
