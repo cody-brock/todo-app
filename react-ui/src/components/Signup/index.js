@@ -3,11 +3,11 @@ import React, { useCallback, useEffect, useState } from 'react';
 import useSignUpForm from '../../hooks/useSignUpForm/index';
 
 
-function Login() {
+function Signup() {
 
   // Callback which is passed to useSignUpForm
   const signup = () => {
-    alert(`Login Received! Username: ${inputs.username}`);
+    alert(`Signup Received! Username: ${inputs.username}, Email: ${inputs.email}`);
   }
 
   // Destructuring for clarity
@@ -16,7 +16,7 @@ function Login() {
   return (
     <div className="App">
       <div>
-        Login time
+        Signup time
       </div>
       <form onSubmit={handleSubmit}>
           <div className="form-group">
@@ -43,6 +43,24 @@ function Login() {
               <div className="col-sm-12">
                 <div className="card login-label">
 
+                  <label htmlFor="email">Email</label>
+                  <input 
+                    type="text" 
+                    name="email"
+                    value={inputs.email || ""}
+                    onChange={handleInputChange} 
+                    className="form-control login-form" 
+                    placeholder="Enter Email Here" 
+                  />
+
+                </div>
+              </div>
+            </div>
+
+            <div className="row">
+              <div className="col-sm-12">
+                <div className="card login-label">
+
                   <label htmlFor="password">Password</label>
                   <input 
                     type="password" 
@@ -52,7 +70,7 @@ function Login() {
                     className="form-control login-form" 
                     placeholder="Enter Password Here"
                   />
-
+                  
                 </div>
               </div>
             </div>
@@ -63,7 +81,7 @@ function Login() {
                   className="btn btn-signup"
                   type="submit"
                   >
-                  <span> Log In</span>
+                  <span> Sign Up</span>
                 </button>
               </div>
             </div>
@@ -75,4 +93,4 @@ function Login() {
 
 }
 
-export default Login;
+export default Signup;
