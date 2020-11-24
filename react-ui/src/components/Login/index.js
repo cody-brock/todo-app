@@ -1,8 +1,7 @@
 import React, { useCallback, useEffect, useState } from 'react';
-import logo from './logo.svg';
-import './App.css';
+// import './App.css';
 
-function App() {
+function Login() {
   const [message, setMessage] = useState(null);
   const [isFetching, setIsFetching] = useState(false);
   const [url, setUrl] = useState('/api');
@@ -32,7 +31,6 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
         { process.env.NODE_ENV === 'production' ?
             <p>
               This is a production build from create-react-app.
@@ -66,4 +64,4 @@ function App() {
 
 }
 
-export default App;
+export default Login;
