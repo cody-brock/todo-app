@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 const express = require('express');
 const path = require('path');
 const cluster = require('cluster');
@@ -22,6 +24,14 @@ if (!isDev && cluster.isMaster) {
 } else {
   const app = express();
 
+  const cors = require('cors');
+  const bodyParser = require('body-parser');
+  const errorHandler = require('./middleware/errorHandler');
+
+  app.use(bodyParser.urlencoded({ extended: false }));
+  app.use(bodyParser.json());
+  app.use(cors());
+
   // Priority serve any static files.
   app.use(express.static(path.resolve(__dirname, '../react-ui/build')));
 
@@ -32,7 +42,10 @@ if (!isDev && cluster.isMaster) {
   });
 
   // Routes
-  
+  app.use('/users', require('./controllers/users'));
+
+  // global error handler
+  app.use(errorHandler);
 
   // All remaining requests return the React app, so it can handle routing.
   app.get('*', function(request, response) {
