@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
-import { userActions } from '../_actions';
+import { userActions } from '../_actions/user';
 
 class HomePage extends React.Component {
     componentDidMount() {
@@ -22,7 +22,7 @@ class HomePage extends React.Component {
                     <ul>
                         {users.items.map((user, index) =>
                             <li key={user.id}>
-                                {user.firstName + ' ' + user.lastName}
+                                {user.username + ' ' + user.email}
                             </li>
                         )}
                     </ul>

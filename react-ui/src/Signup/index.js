@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect, useState } from 'react';
 
-import useSignUpForm from '../../hooks/useSignUpForm/index';
+import useSignUpForm from '../hooks/useSignUpForm/index';
 
 
 function Signup() {

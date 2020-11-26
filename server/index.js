@@ -31,6 +31,10 @@ if (!isDev && cluster.isMaster) {
   app.use(bodyParser.urlencoded({ extended: false }));
   app.use(bodyParser.json());
   app.use(cors());
+  // var corsOptions = {
+  //   origin: "http://localhost:3000"
+  // }
+  // app.use(cors(corsOptions));
 
   // Priority serve any static files.
   app.use(express.static(path.resolve(__dirname, '../react-ui/build')));
