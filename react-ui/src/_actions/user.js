@@ -17,6 +17,7 @@ function login(username, password) {
             .then(
                 user => { 
                     dispatch(success(user));
+                    console.log("Login dispatch.  Pushing / to history")
                     history.push('/');
                 },
                 error => {

@@ -6,6 +6,7 @@ import { userActions } from '../_actions/user';
 
 class HomePage extends React.Component {
     componentDidMount() {
+        console.log("HomePage did mount");
         this.props.dispatch(userActions.getAll());
     }
 
